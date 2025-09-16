@@ -114,7 +114,7 @@ function initializeBlog() {
         {
             title: "Community Spotlight #1",
             date: "August 15, 2024",
-            author: "Hollow Tags Team",
+            author: "Reva Tag Team",
             image: "../images/Logo.png",
             fields: {
                 "🏆 Winner": "Congratulations to @Player123 for winning our first community contest!",
