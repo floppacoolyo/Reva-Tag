@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hollow Tags</title>
+    <link rel="icon" href="images/Icon.png">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sigmar&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header class="navigationHeader">
+        <a href="index.html" class="hollowTagsImageLink">
+            <img class="hollowTagsImage" src="images/Icon.png" alt="Hollow Tags logo" />
+        </a>
+        <div class="headerButtons">
+            <a href="index.html#questions" class="header-button">Questions</a>
+            <a href="pages/blog.html" class="header-button">Blog</a>
+            <a href="pages/contact.html" class="header-button">Contact</a>
+        </div>
+        <div class="headerSocialButtons">
+            <button onclick="window.location.href = 'https://discord.gg/JeVA4rnmAM'" class="header-social-button" title="Discord">
+                <i class="fab fa-discord"></i>
+            </button>
+            <button onclick="window.location.href = 'https://www.tiktok.com/@hyperkid_gt'" class="header-social-button" title="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </button>
+            <button onclick="window.location.href = 'https://x.com/@hollowtags'" class="header-social-button" title="X">
+                <i class="fab fa-x-twitter"></i>
+            </button>
+        </div>
+        <div class="mobile-nav-button">
+            <i class="fas fa-bars"></i>
+        </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="home" id="home">
+            <div class="home-background-overlay"></div>
+            <div class="content">
+                <h1 class="home-header">Hollow Tags</h1>
+                <button class="monke-button" onclick="scrollToSection('connect')">
+                    Become a <strong>Monke</strong>
+                </button>
+            </div>
+        </section>
+
+        <!-- ID changed to 'connect' -->
+        <section class="connect-with-us" id="connect">
+            <h1 class="connect-with-us-header">Connect With Us</h1>
+            <button onclick="window.location.href = 'contact.html'" class="header-social-button-connect-with-us-connect">Connect</button>
+            <div class="header-social-buttons-container">
+                <button onclick="window.location.href = 'https://discord.gg/JeVA4rnmAM'" class="header-social-button-connect-with-us" title="Discord">
+                    <i class="fab fa-discord"></i>
+                </button>
+                <button onclick="window.location.href = 'https://www.tiktok.com/@hyperkid_gt'" class="header-social-button-connect-with-us" title="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </button>
+                <button onclick="window.location.href = 'https://x.com/@hollowtags'" class="header-social-button-connect-with-us" title="X">
+                    <i class="fab fa-x-twitter"></i>
+                </button>
+            </div>
+        </section>
+                
+        <!-- ID changed to 'questions' to fix navigation -->
+        <section class="faq" id="questions">
+            <h1 class="faq-header">Frequently Asked Questions</h1>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is Hollow Tags?</span>
+                        <div class="faq-arrow">▼</div>
+                    </div>
+                    <div class="faq-answer">Hollow Tags is an exciting VR gaming platform that allows you to play immersive tag games with friends in virtual reality. Experience the thrill of the chase in stunning virtual environments!</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is Hollow Tags free to play?</span>
+                        <div class="faq-arrow">▼</div>
+                    </div>
+                    <div class="faq-answer">Yes, Hollow Tags is free to play! We offer optional in-game purchases for cosmetic items and additional content to enhance your gaming experience.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I play Hollow Tags under the age of 13?</span>
+                        <div class="faq-arrow">▼</div>
+                    </div>
+                    <div class="faq-answer">While we recommend VR usage for ages 13 and up following industry standards, younger players may enjoy Hollow Tags with proper parental supervision and consent.</div>
+                </div>
+            </div>
+        </section>
+                
+        <section class="play-now" id="play">
+            <h1>PLAY NOW</h1>
+            <img onclick="window.location.href ='https://www.meta.com/experiences/9092600404180219/'" 
+                 src="images/Meta-Logo.png" alt="Play on Meta Quest" class="meta-logo" />
+            <div class="extras">
+                <h3>Made with ❤️ by StevenVR</h3>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-column footer-about">
+                    <img src="images/Icon.png" alt="Hollow Tags Logo" class="footer-logo">
+                    <p class="footer-tagline">Experience the thrill of the chase in stunning virtual environments!</p>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Navigation</h3>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="index.html#questions" class="footer-link">Questions</a>
+                    <a href="pages/blog.html" class="footer-link">Blog</a>
+                    <a href="pages/contact.html" class="footer-link">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Legal</h3>
+                    <a href="pages/privacy-policy.html" class="footer-link">Privacy Policy</a>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Follow Us</h3>
+                    <div class="footer-social-icons">
+                         <a href="https://discord.gg/JeVA4rnmAM" class="footer-social-icon" title="Discord"><i class="fab fa-discord"></i></a>
+                         <a href="https://www.tiktok.com/@hyperkid_gt" class="footer-social-icon" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                         <a href="https://x.com/@hollowtags" class="footer-social-icon" title="X"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; <span id="current-year"></span> Hollow Tags. All Rights Reserved.</p>
+                <p class="footer-credit">Made with ❤️ by StevenVR</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+    <button class="theme-switcher" id="theme-switcher">
+        <i class="fas fa-paint-brush"></i>
+    </button>
+</body>
+</html>
