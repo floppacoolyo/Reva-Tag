@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Sky - Staff</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="icon" href="../images/Icon.png" type="image/png">
+</head>
+<body>
+    <div id="snow-container"></div>
+
+    <header class="main-header">
+        <nav class="main-nav">
+            <a href="../index.html" class="nav-logo">Project Sky</a>
+            <ul class="nav-links">
+                <li><a href="../index.html#features">Features</a></li>
+                <li><a href="showcase.html">Showcase</a></li>
+                <li><a href="leaderboard.html">Leaderboard</a></li>
+                <li><a href="staff.html">Staff</a></li>
+                <li><a href="#" class="cta-button nav-cta">Join Community</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="staff-hero content-section">
+            <h2>Meet the Project Sky Team</h2>
+            <p>The dedicated individuals working to bring you the best Gorilla Tag fan-game experience!</p>
+        </section>
+
+        <section class="staff-content content-section">
+            <div class="staff-grid" id="staff-members-container">
+                <!-- Staff members will be dynamically inserted here by script.js -->
+                <p>Loading staff members...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 Project Sky. Game owned by RyanVR. All rights reserved.</p>
+    </footer>
+
+    <script src="../scripts/script.js"></script>
+    <script>
+        // Specific script for staff.html to load content
+        document.addEventListener('DOMContentLoaded', () => {
+            const staffContainer = document.getElementById('staff-members-container');
+
+            function renderStaffMember(member) {
+                const memberCard = document.createElement('div');
+                memberCard.classList.add('staff-card');
+                memberCard.innerHTML = `
+                    <img src="${member.imageUrl || '../images/default-avatar.png'}" alt="${member.name}" class="staff-avatar">
+                    <h3>${member.name}</h3>
+                    <p class="staff-role">${member.role}</p>
+                    <p class="staff-description">${member.description || ''}</p>
+                    <div class="staff-social-links">
+                        ${member.socialLinks ? member.socialLinks.map(link => `
+                            <a href="${link.url}" target="_blank" rel="noopener noreferrer" title="${link.platform}">
+                                <img src="../images/${link.platform.toLowerCase()}-icon.png" alt="${link.platform}" class="social-icon">
+                            </a>
+                        `).join('') : ''}
+                    </div>
+                `;
+                return memberCard;
+            }
+
+            loadAndRenderContent('../data/staff.json', '#staff-members-container', renderStaffMember);
+        });
+    </script>
+</body>
+</html>

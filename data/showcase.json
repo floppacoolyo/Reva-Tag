@@ -1,0 +1,55 @@
+[
+    {
+        "id": "mod-1",
+        "name": "Custom Emote Wheel",
+        "type": "mod",
+        "description": "Unleash your personality with a wide array of custom emotes, easily accessible through an intuitive emote wheel.",
+        "imageUrl": "images/emote-wheel.jpg",
+        "downloadLink": "#",
+        "tags": ["mod", "cosmetic"]
+    },
+    {
+        "id": "mod-2",
+        "name": "Long Arms Mod",
+        "type": "mod",
+        "description": "Gain a strategic advantage with extended arm reach, perfect for climbing and tagging opponents from a distance.",
+        "imageUrl": "images/long-arms.jpg",
+        "downloadLink": "#",
+        "tags": ["mod", "gameplay"]
+    },
+    {
+        "id": "mod-3",
+        "name": "Speed Boost Ability",
+        "type": "mod",
+        "description": "Traverse maps at incredible speeds, outmaneuvering your rivals with a temporary burst of speed.",
+        "imageUrl": "images/speed-boost.jpg",
+        "downloadLink": "#",
+        "tags": ["mod", "gameplay"]
+    },
+    {
+        "id": "mod-4",
+        "name": "ii stupid mod menu",
+        "type": "mod",
+        "description": "Access a variety of fun and useful client-side modifications to enhance your gameplay experience.",
+        "imageUrl": "images/mod-menu.jpg",
+        "downloadLink": "#",
+        "tags": ["mod", "utility"]
+    },
+    {
+        "id": "map-1",
+        "name": "Winter Wonderland Map",
+        "type": "map",
+        "description": "A festive, snow-covered map designed for the Winter 2024 update, featuring new climbing routes and hidden areas.",
+        "imageUrl": "images/winter-map.jpg",
+        "downloadLink": "#",
+        "tags": ["map", "winter", "new"]
+    },
+    {
+        "id": "feature-1",
+        "name": "Mod Checking System",
+        "type": "feature",
+        "description": "Ensures fair play by checking for unauthorized modifications, maintaining a balanced competitive environment.",
+        "imageUrl": "images/mod-checking.jpg",
+        "tags": ["feature", "security"]
+    }
+]

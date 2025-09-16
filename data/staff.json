@@ -1,0 +1,41 @@
+[
+    {
+        "id": "staff-1",
+        "name": "RyanVR",
+        "role": "Game Owner / Lead Developer",
+        "description": "The visionary behind Project Sky, leading development and ensuring a top-tier Gorilla Tag fan-game experience.",
+        "imageUrl": "images/ryanvr-avatar.png",
+        "socialLinks": [
+            {"platform": "Discord", "url": "https://discord.gg/ryancord"},
+            {"platform": "Twitter", "url": "https://twitter.com/ryanvr"}
+        ]
+    },
+    {
+        "id": "staff-2",
+        "name": "ModMaster",
+        "role": "Community Manager",
+        "description": "Keeping the Project Sky community vibrant and engaged, and ensuring a positive environment for all players.",
+        "imageUrl": "images/modmaster-avatar.png",
+        "socialLinks": [
+            {"platform": "Discord", "url": "https://discord.gg/modmaster"}
+        ]
+    },
+    {
+        "id": "staff-3",
+        "name": "CodeMonkey",
+        "role": "Gameplay Programmer",
+        "description": "Responsible for implementing new features, optimizing game mechanics, and squashing bugs.",
+        "imageUrl": "images/codemonkey-avatar.png",
+        "socialLinks": []
+    },
+    {
+        "id": "staff-4",
+        "name": "ArtisanGorilla",
+        "role": "3D Artist / Designer",
+        "description": "Crafting immersive environments and visually stunning assets for the Project Sky world.",
+        "imageUrl": "images/artisangorilla-avatar.png",
+        "socialLinks": [
+            {"platform": "Twitter", "url": "https://twitter.com/artisangorilla"}
+        ]
+    }
+]

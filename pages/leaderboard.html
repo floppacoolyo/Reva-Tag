@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Sky - Leaderboard</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="icon" href="../images/Icon.png" type="image/png">
+</head>
+<body>
+    <div id="snow-container"></div>
+
+    <header class="main-header">
+        <nav class="main-nav">
+            <a href="../index.html" class="nav-logo">Project Sky</a>
+            <ul class="nav-links">
+                <li><a href="../index.html#features">Features</a></li>
+                <li><a href="showcase.html">Showcase</a></li>
+                <li><a href="leaderboard.html">Leaderboard</a></li>
+                <li><a href="staff.html">Staff</a></li>
+                <li><a href="#" class="cta-button nav-cta">Join Community</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="leaderboard-hero content-section">
+            <h2>Project Sky Leaderboards</h2>
+            <p>See who's dominating the competition in various skills!</p>
+        </section>
+
+        <section class="leaderboard-content content-section">
+            <div class="leaderboard-filters">
+                <label for="category-select">Filter by Category:</label>
+                <select id="category-select">
+                    <option value="all">All Categories</option>
+                    <option value="wallClimbing">Wall Climbing</option>
+                    <option value="speedRunning">Speed Running</option>
+                    <option value="lucioRunning">Lucio Running</option>
+                    <option value="branching">Branching</option>
+                    <option value="climbing">Climbing</option>
+                    <option value="scaling">Scaling</option>
+                </select>
+            </div>
+            <div class="leaderboard-table-container">
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player Name</th>
+                            <th>Score</th>
+                            <th>Category</th>
+                            <th>Last Updated</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-body">
+                        <!-- Leaderboard data will be dynamically inserted here by script.js -->
+                        <tr><td colspan="5">Loading leaderboard data...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 Project Sky. Game owned by RyanVR. All rights reserved.</p>
+    </footer>
+
+    <script src="../scripts/script.js"></script>
+    <script>
+        // Specific script for leaderboard.html to load content
+        document.addEventListener('DOMContentLoaded', () => {
+            const leaderboardBody = document.getElementById('leaderboard-body');
+            const categorySelect = document.getElementById('category-select');
+            let allLeaderboardData = []; // To store all data for filtering
+
+            function renderLeaderboardRow(player) {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${player.rank}</td>
+                    <td>${player.playerName}</td>
+                    <td>${player.score}</td>
+                    <td>${player.category}</td>
+                    <td>${player.lastUpdated || 'N/A'}</td>
+                `;
+                return row;
+            }
+
+            async function loadLeaderboardData() {
+                try {
+                    const response = await fetch('../data/leaderboard.json');
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    allLeaderboardData = await response.json();
+                    displayLeaderboard(allLeaderboardData);
+                } catch (error) {
+                    console.error('Error fetching leaderboard data:', error);
+                    leaderboardBody.innerHTML = '<tr><td colspan="5">Failed to load leaderboard data.</td></tr>';
+                }
+            }
+
+            function displayLeaderboard(data) {
+                leaderboardBody.innerHTML = ''; // Clear existing rows
+                if (data.length > 0) {
+                    // Sort by score (descending) and then rank (ascending)
+                    data.sort((a, b) => {
+                        if (b.score !== a.score) return b.score - a.score;
+                        return a.rank - b.rank;
+                    }).forEach(player => {
+                        leaderboardBody.appendChild(renderLeaderboardRow(player));
+                    });
+                } else {
+                    leaderboardBody.innerHTML = '<tr><td colspan="5">No leaderboard data available.</td></tr>';
+                }
+            }
+
+            categorySelect.addEventListener('change', (event) => {
+                const selectedCategory = event.target.value;
+                if (selectedCategory === 'all') {
+                    displayLeaderboard(allLeaderboardData);
+                } else {
+                    const filteredData = allLeaderboardData.filter(player => player.category === selectedCategory);
+                    displayLeaderboard(filteredData);
+                }
+            });
+
+            loadLeaderboardData();
+        });
+    </script>
+</body>
+</html>

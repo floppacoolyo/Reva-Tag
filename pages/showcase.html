@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Sky - Showcase</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="icon" href="../images/Icon.png" type="image/png">
+</head>
+<body>
+    <div id="snow-container"></div>
+
+    <header class="main-header">
+        <nav class="main-nav">
+            <a href="../index.html" class="nav-logo">Project Sky</a>
+            <ul class="nav-links">
+                <li><a href="../index.html#features">Features</a></li>
+                <li><a href="showcase.html">Showcase</a></li>
+                <li><a href="leaderboard.html">Leaderboard</a></li>
+                <li><a href="staff.html">Staff</a></li>
+                <li><a href="#" class="cta-button nav-cta">Join Community</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="showcase-hero content-section">
+            <h2>Project Sky Showcase</h2>
+            <p>Explore the exciting mods, maps, and features available in Project Sky!</p>
+        </section>
+
+        <section class="showcase-content content-section">
+            <div class="showcase-filters">
+                <!-- Filters will be dynamically inserted here by script.js -->
+                <button class="filter-button active" data-filter="all">All</button>
+                <button class="filter-button" data-filter="mod">Mods</button>
+                <button class="filter-button" data-filter="map">Maps</button>
+                <button class="filter-button" data-filter="feature">Features</button>
+            </div>
+            <div class="showcase-grid" id="showcase-items-container">
+                <!-- Showcase items will be dynamically inserted here by script.js -->
+                <p>Loading showcase items...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 Project Sky. Game owned by RyanVR. All rights reserved.</p>
+    </footer>
+
+    <script src="../scripts/script.js"></script>
+    <script>
+        // Specific script for showcase.html to load content
+        document.addEventListener('DOMContentLoaded', () => {
+            const showcaseContainer = document.getElementById('showcase-items-container');
+
+            function renderShowcaseItem(item) {
+                const itemCard = document.createElement('div');
+                itemCard.classList.add('showcase-card');
+                itemCard.setAttribute('data-type', item.type); // For filtering
+                itemCard.innerHTML = `
+                    <img src="${item.imageUrl || '../images/default-showcase.png'}" alt="${item.name}" class="showcase-image">
+                    <h3>${item.name}</h3>
+                    <p>${item.description}</p>
+                    ${item.downloadLink ? `<a href="${item.downloadLink}" class="cta-button small-cta">Download</a>` : ''}
+                    ${item.detailsPageUrl ? `<a href="${item.detailsPageUrl}" class="cta-button small-cta">Details</a>` : ''}
+                `;
+                return itemCard;
+            }
+
+            loadAndRenderContent('../data/showcase.json', '#showcase-items-container', renderShowcaseItem);
+
+            // Filter functionality
+            document.querySelectorAll('.filter-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    document.querySelectorAll('.filter-button').forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    const filterType = this.getAttribute('data-filter');
+                    
+                    document.querySelectorAll('.showcase-card').forEach(card => {
+                        if (filterType === 'all' || card.getAttribute('data-type') === filterType) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

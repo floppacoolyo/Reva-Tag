@@ -1,0 +1,66 @@
+[
+    {
+        "id": "player-1",
+        "playerName": "GorillaPro",
+        "score": 1500,
+        "category": "wallClimbing",
+        "rank": 1,
+        "lastUpdated": "2024-09-12"
+    },
+    {
+        "id": "player-2",
+        "playerName": "SpeedyMonkey",
+        "score": 1200,
+        "category": "speedRunning",
+        "rank": 1,
+        "lastUpdated": "2024-09-11"
+    },
+    {
+        "id": "player-3",
+        "playerName": "BranchMaster",
+        "score": 1100,
+        "category": "branching",
+        "rank": 1,
+        "lastUpdated": "2024-09-10"
+    },
+    {
+        "id": "player-4",
+        "playerName": "LucioLegend",
+        "score": 950,
+        "category": "lucioRunning",
+        "rank": 1,
+        "lastUpdated": "2024-09-12"
+    },
+    {
+        "id": "player-5",
+        "playerName": "ClimbKing",
+        "score": 1300,
+        "category": "climbing",
+        "rank": 1,
+        "lastUpdated": "2024-09-11"
+    },
+    {
+        "id": "player-6",
+        "playerName": "ScalerSupreme",
+        "score": 1050,
+        "category": "scaling",
+        "rank": 1,
+        "lastUpdated": "2024-09-10"
+    },
+    {
+        "id": "player-7",
+        "playerName": "WinterWarrior",
+        "score": 1450,
+        "category": "wallClimbing",
+        "rank": 2,
+        "lastUpdated": "2024-09-12"
+    },
+    {
+        "id": "player-8",
+        "playerName": "FrostRunner",
+        "score": 1150,
+        "category": "speedRunning",
+        "rank": 2,
+        "lastUpdated": "2024-09-11"
+    }
+]
